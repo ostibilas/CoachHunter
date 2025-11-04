@@ -45,9 +45,11 @@ public class targetScript : MonoBehaviour
   void chamarMorte(){
     ThisCollider.enabled  = false;
     Anima.SetBool("morreu", true);
+    StartCoroutine(gritodeMorte());
   }
 
-  public void gritodeMorte(){
+  IEnumerator gritodeMorte(){
+    yield return new WaitForSeconds(0.05f);
     localAudioSource.PlayOneShot(gritoMorte[0]);
   }
 

@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class controladorGamePlay : MonoBehaviour
 {
     public Camera mainCamera;
-    public Collider2D hitCollider;
-        
+            
     [Header("Configurações de Arma")]
     public GameObject hitEffectPrefab; // Prefab do efeito visual (ex: um círculo de sangue, um flash)
     
     // Variáveis para detecção de Swipe
     private bool isSwiping = false;
     private Vector2 swipeStartPos;
+    public float stageTempo;
     
     void Start()
     {
@@ -18,10 +22,27 @@ public class controladorGamePlay : MonoBehaviour
         {
             mainCamera = Camera.main;
         }
+
+        StageStarter(1,"normal");
+    }
+
+    IEnumerator StageStarter(int level, string Dificuldade){
+        yield return new WaitForSeconds(0f);
+        if (level == 1)
+        {
+            stageTempo = 60f;
+        }
+
+
     }
 
     void Update()
     {
+        if(stageTempo > 0f){
+            stageTempo -= Time.deltaTime;
+            print(stageTempo);
+        }
+
         // --- LÓGICA DE CLIQUE (Simples Shot) ---
         if (Input.GetMouseButtonDown(0)) 
         {
