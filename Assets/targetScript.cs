@@ -37,7 +37,7 @@ public class targetScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D colisao){
           print("encostei OnTriggerEnter2D: " + colisao.gameObject.tag);
           
-        if(colisao.gameObject.tag == "pistolShootTag"){ print("a");Vida = Vida -1;} //se tomar tiro de pistola é -1
+        if(colisao.gameObject.tag == "pistolShootTag"){ Vida = Vida -1;} //se tomar tiro de pistola é -1
     }
     
    
