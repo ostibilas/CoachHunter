@@ -13,7 +13,7 @@ public class targetScript : MonoBehaviour
     public Animator Anima;
     public AudioSource localAudioSource;
     public AudioClip[] gritoMorte;
-   
+  public GameObject FalaAtual;
     public Collider2D ThisCollider;
     // Start is called before the first frame update
     void Start()
@@ -39,17 +39,23 @@ public class targetScript : MonoBehaviour
           
         if(colisao.gameObject.tag == "pistolShootTag"){ Vida = Vida -1;} //se tomar tiro de pistola é -1
     }
+
+
+
+  void chamarMorte()
+  {
+    ThisCollider.enabled = false; //Desativa colisor
+    Anima.SetBool("morreu", true); //ativa a animacao de Morte
+    StartCoroutine(gritodeMorte()); //chama a funcao de sair som de morte
+    if (FalaAtual != null) {
+      FalaAtual.GetComponentInChildren<Animator>().SetBool("isDead", true);//busca o GameObject dentro do falaAtual
+    }
     
-   
-  
-  void chamarMorte(){
-    ThisCollider.enabled  = false;
-    Anima.SetBool("morreu", true);
-    StartCoroutine(gritodeMorte());
+    
   }
 
   IEnumerator gritodeMorte(){
-    yield return new WaitForSeconds(0.05f);
+    yield return new WaitForSeconds(0.05f); //espera um pouco antes de chamar o audio
     localAudioSource.PlayOneShot(gritoMorte[0]);
   }
 
