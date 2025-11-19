@@ -150,11 +150,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Vida: 1
+  Pontos: 100
   Anima: {fileID: 4952603573157340590}
   localAudioSource: {fileID: 4952603573157340579}
   gritoMorte:
   - {fileID: 8300000, guid: b7aff81870ce47d4c941dbdc633cb96d, type: 3}
+  FalaAtual: {fileID: 0}
   ThisCollider: {fileID: 4952603573157340578}
+  gameControler: {fileID: 0}
 --- !u!61 &4952603573157340578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -312,6 +315,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4952603573157340580}
   mira1: {fileID: 3667939818767876771}
-  falaPersonagem: {fileID: 5573530877547974395, guid: e61e5bccdcd8d424b9ebfcb9c664c8ef,
+  falaPersonagem: {fileID: 2539432115200720164, guid: e61e5bccdcd8d424b9ebfcb9c664c8ef,
     type: 3}
   speed: 3

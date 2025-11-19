@@ -3,10 +3,13 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class controladorGamePlay : MonoBehaviour
 {
     public Camera mainCamera;
+    public TMP_Text Timer,scoreHUD;
+    public int pontosAtuais;
             
     [Header("Configurações de Arma")]
     public GameObject hitEffectPrefab; // Prefab do efeito visual (ex: um círculo de sangue, um flash)
@@ -38,9 +41,12 @@ public class controladorGamePlay : MonoBehaviour
 
     void Update()
     {
-        if(stageTempo > 0f){
+        scoreHUD.text = $"Score:{pontosAtuais}"; 
+        if (stageTempo > 0f)
+        {
             stageTempo -= Time.deltaTime;
-            print(stageTempo);
+            Timer.text = stageTempo.ToString("F0"); ;
+
         }
 
         // --- LÓGICA DE CLIQUE (Simples Shot) ---
