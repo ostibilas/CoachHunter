@@ -1,0 +1,102 @@
+{
+  "Unity 2D Snippets": {
+    "scope": "csharp",
+    "snippets": {
+      
+      "GetComponent": {
+        "prefix": "GetComponent",
+        "body": [
+          "GetComponent<${1:Component}>();"
+        ],
+        "description": "Obtém um componente do GameObject"
+      },
+
+      "GetComponentInChildren": {
+        "prefix": "GetComponentInChildren",
+        "body": [
+          "GetComponentInChildren<${1:Component}>();"
+        ],
+        "description": "Obtém um componente nos filhos"
+      },
+
+      "GameObject": {
+        "prefix": "GameObject",
+        "body": [
+          "GameObject ${1:objName} = new GameObject(\"${1:objName}\");"
+        ],
+        "description": "Cria um novo GameObject"
+      },
+
+      "Instantiate": {
+        "prefix": "Instantiate",
+        "body": [
+          "Instantiate(${1:prefab}, ${2:position}, ${3:rotation});"
+        ],
+        "description": "Instancia um prefab"
+      },
+
+      "IEnumerator": {
+        "prefix": "IEnumerator",
+        "body": [
+          "IEnumerator ${1:Rotina}() {",
+          "\tyield return new WaitForSeconds(${2:1f});",
+          "}"
+        ],
+        "description": "Cria uma rotina IEnumerator"
+      },
+
+      "StartCoroutine": {
+        "prefix": "StartCoroutine",
+        "body": [
+          "StartCoroutine(${1:NomeDaRotina}());"
+        ],
+        "description": "Chama uma rotina"
+      },
+
+      "Rigidbody2D": {
+        "prefix": "Rigidbody2D",
+        "body": [
+          "Rigidbody2D rb = GetComponent<Rigidbody2D>();"
+        ],
+        "description": "Pega o Rigidbody2D"
+      },
+
+      "Vector2": {
+        "prefix": "Vector2",
+        "body": [
+          "new Vector2(${1:x}, ${2:y})"
+        ],
+        "description": "Cria um Vector2"
+      },
+
+      "Debug.Log": {
+        "prefix": "Debug.Log",
+        "body": [
+          "Debug.Log(${1:mensagem});"
+        ],
+        "description": "Log no console"
+      },
+
+      "OnTriggerEnter2D": {
+        "prefix": "OnTriggerEnter2D",
+        "body": [
+          "private void OnTriggerEnter2D(Collider2D ${1:collision}) {",
+          "\t${2:// código aqui}",
+          "}"
+        ],
+        "description": "Trigger 2D"
+      },
+
+      "OnCollisionEnter2D": {
+        "prefix": "OnCollisionEnter2D",
+        "body": [
+          "private void OnCollisionEnter2D(Collision2D ${1:collision}) {",
+          "\t${2:// código aqui}",
+          "}"
+        ],
+        "description": "Collision 2D"
+      }
+
+    }
+  }
+}
