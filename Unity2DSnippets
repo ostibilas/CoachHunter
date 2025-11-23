@@ -1,102 +1,567 @@
 {
-  "Unity 2D Snippets": {
-    "scope": "csharp",
-    "snippets": {
-      
-      "GetComponent": {
-        "prefix": "GetComponent",
-        "body": [
-          "GetComponent<${1:Component}>();"
-        ],
-        "description": "Obtém um componente do GameObject"
-      },
-
-      "GetComponentInChildren": {
-        "prefix": "GetComponentInChildren",
-        "body": [
-          "GetComponentInChildren<${1:Component}>();"
-        ],
-        "description": "Obtém um componente nos filhos"
-      },
-
-      "GameObject": {
-        "prefix": "GameObject",
-        "body": [
-          "GameObject ${1:objName} = new GameObject(\"${1:objName}\");"
-        ],
-        "description": "Cria um novo GameObject"
-      },
-
-      "Instantiate": {
-        "prefix": "Instantiate",
-        "body": [
-          "Instantiate(${1:prefab}, ${2:position}, ${3:rotation});"
-        ],
-        "description": "Instancia um prefab"
-      },
-
-      "IEnumerator": {
-        "prefix": "IEnumerator",
-        "body": [
-          "IEnumerator ${1:Rotina}() {",
-          "\tyield return new WaitForSeconds(${2:1f});",
-          "}"
-        ],
-        "description": "Cria uma rotina IEnumerator"
-      },
-
-      "StartCoroutine": {
-        "prefix": "StartCoroutine",
-        "body": [
-          "StartCoroutine(${1:NomeDaRotina}());"
-        ],
-        "description": "Chama uma rotina"
-      },
-
-      "Rigidbody2D": {
-        "prefix": "Rigidbody2D",
-        "body": [
-          "Rigidbody2D rb = GetComponent<Rigidbody2D>();"
-        ],
-        "description": "Pega o Rigidbody2D"
-      },
-
-      "Vector2": {
-        "prefix": "Vector2",
-        "body": [
-          "new Vector2(${1:x}, ${2:y})"
-        ],
-        "description": "Cria um Vector2"
-      },
-
-      "Debug.Log": {
-        "prefix": "Debug.Log",
-        "body": [
-          "Debug.Log(${1:mensagem});"
-        ],
-        "description": "Log no console"
-      },
-
-      "OnTriggerEnter2D": {
-        "prefix": "OnTriggerEnter2D",
-        "body": [
-          "private void OnTriggerEnter2D(Collider2D ${1:collision}) {",
-          "\t${2:// código aqui}",
-          "}"
-        ],
-        "description": "Trigger 2D"
-      },
-
-      "OnCollisionEnter2D": {
-        "prefix": "OnCollisionEnter2D",
-        "body": [
-          "private void OnCollisionEnter2D(Collision2D ${1:collision}) {",
-          "\t${2:// código aqui}",
-          "}"
-        ],
-        "description": "Collision 2D"
-      }
-
-    }
-  }
+	"├>UnityNØØB®:Start": {
+		"scope": "csharp",
+		"prefix": "start",
+		"body": ["void Start() {}"],
+		"description": "Método Start"
+	},
+	"├>UnityNØØB®:Update": {
+		"scope": "csharp",
+		"prefix": "Update()",
+		"body": ["void Update() {}"],
+		"description": "Método Update"
+	},
+	"├>UnityNØØB®:Awake": {
+		"scope": "csharp",
+		"prefix": "awake",
+		"body": ["void Awake() {}"],
+		"description": "Método Awake"
+	},
+	"├>UnityNØØB®:Destroy": {
+		"scope": "csharp",
+		"prefix": "Destroy()",
+		"body": ["Destroy(obj,0F);"],
+		"description": "Destroi um objeto"
+	},
+	"├>UnityNØØB®:SerializeField": {
+		"scope": "csharp",
+		"prefix": "SerializeField",
+		"body": ["[SerializeField] private int variavel;"],
+		"description": "SerializeField"
+	},
+	"├>UnityNØØB®:Vector2": {
+		"scope": "csharp",
+		"prefix": "new Vector2",
+		"body": ["new Vector2(x, y)"],
+		"description": "Cria Vector2"
+	},
+	"├>UnityNØØB®:Vector3": {
+		"scope": "csharp",
+		"prefix": "new Vector3",
+		"body": ["new Vector3(x, y, z)"],
+		"description": "Cria Vector3"
+	},
+	"├>UnityNØØB®:MoveTowards": {
+		"scope": "csharp",
+		"prefix": "MoveTowards",
+		"body": ["Vector2.MoveTowards(transform.position, alvo, velocidade * Time.deltaTime);"],
+		"description": "Move ate um GameObject"
+	},
+	"├>UnityNØØB®:GameObject": {
+		"scope": "csharp",
+		"prefix": "GameObject",
+		"body": ["GameObject obj"],
+		"description": "Cria GameObject"
+	},
+	"├>UnityNØØB®:Instantiate": {
+		"scope": "csharp",
+		"prefix": "Instantiate",
+		"body": ["Instantiate(prefabAqui, transform.position, rotacao);"
+		],
+		"description": "Instantiate"
+	},
+	"├>UnityNØØB®:GetComponent": {
+		"scope": "csharp",
+		"prefix": "GetComponent",
+		"body": [
+			"GetComponent<Componente>();"
+		],
+		"description": "GetComponent"
+	},
+	"├>UnityNØØB®:GetComponentInChildren": {
+		"scope": "csharp",
+		"prefix": "GetComponentInChildren",
+		"body": [
+			"GetComponentInChildren<Componente>();"
+		],
+		"description": "Get Component In Children"
+	},
+	"├>UnityNØØB®:Rigidbody2D": {
+		"scope": "csharp",
+		"prefix": "Rigidbody2D",
+		"body": [
+			"Rigidbody2D;"
+		],
+		"description": "Rigidbody2D"
+	},
+	"├>UnityNØØB®:IEnumerator": {
+		"scope": "csharp",
+		"prefix": "IEnumerator",
+		"body": [
+			"IEnumerator Rotina() {}"
+		],
+		"description": "cria uma Coroutine"
+	},
+	"├>UnityNØØB®:StartCoroutine": {
+		"scope": "csharp",
+		"prefix": "StartCoroutine",
+		"body": [
+			"StartCoroutine(NomeRotina());"
+		],
+		"description": "StartCoroutine"
+	},
+	"├>UnityNØØB®:DebugLog": {
+		"scope": "csharp",
+		"prefix": "Debug.Log",
+		"body": [
+			"Debug.Log(msg);"
+		],
+		"description": "Debug.Log"
+	},
+	"├>UnityNØØB®:OnTriggerEnter2D": {
+		"scope": "csharp",
+		"prefix": "OnTriggerEnter2D",
+		"body": [
+			"void OnTriggerEnter2D( Collider2D variavelDeTrigger ) {}"
+		],
+		"description": "Trigger 2D"
+	},
+	"├>UnityNØØB®:OnCollisionEnter2D": {
+		"scope": "csharp",
+		"prefix": "OnCollisionEnter2D",
+		"body": [
+			"void OnCollisionEnter2D( Collision2D variaveldecolisao ) {}"
+		],
+		"description": "Collision 2D"
+	},
+	"├>UnityNØØB®:AddForce2D": {
+		"scope": "csharp",
+		"prefix": "AddForce",
+		"body": [
+			".AddForce(Vector2.up * forca);"
+		],
+		"description": "AddForce 2D"
+	},
+	"├>UnityNØØB®:Velocity2D": {
+		"scope": "csharp",
+		"prefix": "velocity",
+		"body": [
+			"rb.velocity = new Vector2(x, y);"
+		],
+		"description": "Define velocidade 2D"
+	},
+	"├>UnityNØØB®:FlipX": {
+		"scope": "csharp",
+		"prefix": "flipx",
+		"body": [
+			"sprite.flipX = true;"
+		],
+		"description": "Inverte sprite horizontalmente"
+	},
+	"├>UnityNØØB®:Translate2D": {
+		"scope": "csharp",
+		"prefix": "Translate",
+		"body": [
+			"transform.Translate(new Vector2(x, y));"
+		],
+		"description": "Translate 2D"
+	},
+	"├>UnityNØØB®:OverlapCircle2D": {
+		"scope": "csharp",
+		"prefix": "Physics2D.OverlapCircle",
+		"body": [
+			"Collider2D col = Physics2D.OverlapCircle(posicao, raio);"
+		],
+		"description": "OverlapCircle 2D"
+	},
+	"├>UnityNØØB®:OverlapBox2D": {
+		"scope": "csharp",
+		"prefix": "Physics2D.OverlapBox",
+		"body": [
+			"Collider2D col = Physics2D.OverlapBox(posicao, tamanho, rotacao);"
+		],
+		"description": "OverlapBox 2D"
+	},
+	"├>UnityNØØB®:SetTrigger": {
+		"scope": "csharp",
+		"prefix": "anima.SetTrigger",
+		"body": [
+			"anima.SetTrigger(\"acao\");"
+		],
+		"description": "Animator SetTrigger"
+	},
+	"├>UnityNØØB®:SetBool": {
+		"scope": "csharp",
+		"prefix": "anima.SetBool",
+		"body": [
+			"anim.SetBool(\"estado\", true);"
+		],
+		"description": "Animator SetBool"
+	},
+	"├>UnityNØØB®:SetFloat": {
+		"scope": "csharp",
+		"prefix": "anima.SetFloat",
+		"body": [
+			"anima.SetFloat(\"velocidade\", valor);"
+		],
+		"description": "Animator SetFloat"
+	},
+	"├>UnityNØØB®:IsGrounded": {
+		"scope": "csharp",
+		"prefix": "ground",
+		"body": [
+			"bool noChao = Physics2D.OverlapCircle(pontoDeChecagem, raio);"
+		],
+		"description": "Checa se está no chão"
+	},
+	"├>UnityNØØB®:Bounce2D": {
+		"scope": "csharp",
+		"prefix": "velocity",
+		"body": [
+			"rb.velocity = new Vector2(rb.velocity.x, forcaDoPulo);"
+		],
+		"description": "Pulo simples 2D"
+	},
+	"├>UnityNØØB®:PlaySound": {
+		"scope": "csharp",
+		"prefix": "audio.Play",
+		"body": [
+			"audio.Play();"
+		],
+		"description": "Toca áudio"
+	},
+	"├>UnityNØØB®:PlayOneShot": {
+		"scope": "csharp",
+		"prefix": "audio.PlayOneShot",
+		"body": [
+			"audio.PlayOneShot(clip);"
+		],
+		"description": "Toca efeito único"
+	},
+	"├>UnityNØØB®:ChangeSprite": {
+		"scope": "csharp",
+		"prefix": "chspr",
+		"body": [
+			"sprite.sprite = novoSprite;"
+		],
+		"description": "Troca sprite"
+	},
+	"├>UnityNØØB®:ColorSprite": {
+		"scope": "csharp",
+		"prefix": "color",
+		"body": [
+			"sprite.color = novaCor;"
+		],
+		"description": "Muda cor do sprite"
+	},
+	"├>UnityNØØB®:SetPosition2D": {
+		"scope": "csharp",
+		"prefix": "transform.position",
+		"body": [
+			"transform.position = new Vector2(x, y);"
+		],
+		"description": "Define posição 2D"
+	},
+	"├>UnityNØØB®:LookAt2D": {
+		"scope": "csharp",
+		"prefix": "transform.right ",
+		"body": [
+			"transform.right = alvo - transform.position;"
+		],
+		"description": "Transform LookAt 2D"
+	},
+	"├>UnityNØØB®:Canvas": {
+		"scope": "csharp",
+		"prefix": "canvas",
+		"body": [
+			"Canvas canvas;"
+		],
+		"description": "Declara Canvas"
+	},
+	"├>UnityNØØB®:Image": {
+		"scope": "csharp",
+		"prefix": "img",
+		"body": [
+			"Image imagem;"
+		],
+		"description": "Declara Image"
+	},
+	"├>UnityNØØB®:ChangeImageSprite": {
+		"scope": "csharp",
+		"prefix": "imagem.sprite",
+		"body": [
+			"imagem.sprite = novoSprite;"
+		],
+		"description": "Troca sprite da Image"
+	},
+	"├>UnityNØØB®:TMP_Text": {
+		"scope": "csharp",
+		"prefix": "TMP_Text texto",
+		"body": [
+			"TMP_Text texto;"
+		],
+		"description": "Declara TMP_Text"
+	},
+	"├>UnityNØØB®:TMP_SetText": {
+		"scope": "csharp",
+		"prefix": "text",
+		"body": [
+			"texto.text = \"Novo Texto\";"
+		],
+		"description": "Define texto (TMP)"
+	},
+	"├>UnityNØØB®:Button_onClick": {
+		"scope": "csharp",
+		"prefix": "onClick.AddListener",
+		"body": [
+			"botao.onClick.AddListener(Funcao);"
+		],
+		"description": "Listener do Botão"
+	},
+	"├>UnityNØØB®:QuaternionIdentity": {
+		"scope": "csharp",
+		"prefix": "Quaternion.identity",
+		"body": [
+			"Quaternion.identity"
+		],
+		"description": "Retorna Quaternion.identity"
+	},
+	"├>UnityNØØB®:SetPos": {
+		"scope": "csharp",
+		"prefix": "transform.position",
+		"body": [
+			"transform.position = novaPosicao;"
+		],
+		"description": "Define posição"
+	},
+	"├>UnityNØØB®:DeltaTime": {
+		"scope": "csharp",
+		"prefix": "Time.deltaTime",
+		"body": [
+			"Time.deltaTime"
+		],
+		"description": "Time.deltaTime"
+	},
+	"├>UnityNØØB®:UnityEvent": {
+		"scope": "csharp",
+		"prefix": "UnityEvent",
+		"body": [
+			"UnityEvent evento;"
+		],
+		"description": "Declara um UnityEvent"
+	},
+	"├>UnityNØØB®:InvokeUnityEvent": {
+		"scope": "csharp",
+		"prefix": "Invoke",
+		"body": [
+			"evento.Invoke();"
+		],
+		"description": "Invoca um UnityEvent"
+	},
+	"├>UnityNØØB®:UnityEventAddListener": {
+		"scope": "csharp",
+		"prefix": "AddListener",
+		"body": [
+			"evento.AddListener(Funcao);"
+		],
+		"description": "Adiciona Listener ao UnityEvent"
+	},
+	"├>UnityNØØB®:UnityEventRemoveListener": {
+		"scope": "csharp",
+		"prefix": "RemoveListener",
+		"body": [
+			"evento.RemoveListener(Funcao);"
+		],
+		"description": "Remove Listener"
+	},
+	"├>UnityNØØB®:GetKey": {
+		"scope": "csharp",
+		"prefix": "Input.GetKey",
+		"body": [
+			"Input.GetKey(KeyCode.Space)"
+		],
+		"description": "Input.GetKey"
+	},
+	"├>UnityNØØB®:GetKeyDown": {
+		"scope": "csharp",
+		"prefix": "Input.GetKeyDown",
+		"body": [
+			"Input.GetKeyDown(KeyCode.Space)"
+		],
+		"description": "Input.GetKeyDown"
+	},
+	"├>UnityNØØB®:GetKeyUp": {
+		"scope": "csharp",
+		"prefix": "Input.GetKeyUp",
+		"body": [
+			"Input.GetKeyUp(KeyCode.Space)"
+		],
+		"description": "Input.GetKeyUp"
+	},
+	"├>UnityNØØB®:GetMouseButton": {
+		"scope": "csharp",
+		"prefix": "Input.GetMouseButton(0)",
+		"body": [
+			"Input.GetMouseButton(0)"
+		],
+		"description": "Input.GetMouseButton"
+	},
+	"├>UnityNØØB®:GetMouseButtonDown": {
+		"scope": "csharp",
+		"prefix": "Input.GetMouseButtonDown(0)",
+		"body": [
+			"Input.GetMouseButtonDown(0)"
+		],
+		"description": "Input.GetMouseButtonDown"
+	},
+	"├>UnityNØØB®:GetMouseButtonUp": {
+		"scope": "csharp",
+		"prefix": "Input.GetMouseButtonUp(0)",
+		"body": [
+			"Input.GetMouseButtonUp(0)"
+		],
+		"description": "Input.GetMouseButtonUp"
+	},
+	"├>UnityNØØB®:MousePos": {
+		"scope": "csharp",
+		"prefix": "Input.mousePosition",
+		"body": [
+			"Input.mousePosition"
+		],
+		"description": "Posição do mouse"
+	},
+	"├>UnityNØØB®:StopCoroutine": {
+		"scope": "csharp",
+		"prefix": "StopCoroutine",
+		"body": [
+			"StopCoroutine(\"NomeCoroutine\");"
+		],
+		"description": "StopCoroutine"
+	},
+	"├>UnityNØØB®:WaitForSeconds": {
+		"scope": "csharp",
+		"prefix": "WaitForSeconds",
+		"body": [
+			"new WaitForSeconds(1f);"
+		],
+		"description": "WaitForSeconds"
+	},
+	"├>UnityNØØB®:Translate": {
+		"scope": "csharp",
+		"prefix": "Translate",
+		"body": [
+			"transform.Translate(Vector3.right);"
+		],
+		"description": "transform.Translate"
+	},
+	"├>UnityNØØB®:Clamp": {
+		"scope": "csharp",
+		"prefix": "Mathf.Clamp",
+		"body": [
+			"Mathf.Clamp(valor, min, max)"
+		],
+		"description": "Mathf.Clamp"
+	},
+	"├>UnityNØØB®:Lerp": {
+		"scope": "csharp",
+		"prefix": "Mathf.Lerp",
+		"body": [
+			"Mathf.Lerp(a, b, t)"
+		],
+		"description": "Mathf.Lerp"
+	},
+	"├>UnityNØØB®:Raycast2D": {
+		"scope": "csharp",
+		"prefix": "Raycast",
+		"body": [
+			"Physics2D.Raycast(pos, dir)"
+		],
+		"description": "Physics2D.Raycast"
+	},
+	"├>UnityNØØB®:PlayerPrefs.SetInt": {
+		"scope": "csharp",
+		"prefix": "PlayerPrefs.SetInt",
+		"body": [
+			"PlayerPrefs.SetInt(\"chave\", valor);"
+		],
+		"description": "PlayerPrefs.SetInt"
+	},
+	"├>UnityNØØB®:PlayerPrefs.GetInt": {
+		"scope": "csharp",
+		"prefix": "PlayerPrefs.GetInt",
+		"body": [
+			"PlayerPrefs.GetInt(\"chave\");"
+		],
+		"description": "PlayerPrefs.GetInt"
+	},
+	"├>UnityNØØB®:PlayerPrefs.SetFloat": {
+		"scope": "csharp",
+		"prefix": "PlayerPrefs.SetFloat",
+		"body": [
+			"PlayerPrefs.SetFloat(\"chave\", valor);"
+		],
+		"description": "PlayerPrefs.SetFloat"
+	},
+	"├>UnityNØØB®:GameObject.Find": {
+		"scope": "csharp",
+		"prefix": "GameObject.Find",
+		"body": [
+			"GameObject.Find(\"NomeDoObjeto\");"
+		],
+		"description": "GameObject.Find"
+	},
+	"├>UnityNØØB®:Collider2D": {
+		"scope": "csharp",
+		"prefix": "Collider2D",
+		"body": [
+			"Collider2D"
+		],
+		"description": "Collider2D"
+	},
+	"├>UnityNØØB®:WaitForSeconds005": {
+		"scope": "csharp",
+		"prefix": "WaitForSeconds",
+		"body": [
+			"yield return new WaitForSeconds(0.05f);"
+		],
+		"description": "yield return new WaitForSeconds(0.05f)"
+	},
+	"├>UnityNØØB®:Physics2D.Distance": {
+		"scope": "csharp",
+		"prefix": "Distance",
+		"body": [
+			"Physics2D.Distance(colA, colB);"
+		],
+		"description": "Physics2D.Distance"
+	},
+	"├>UnityNØØB®:OverlapCircle": {
+		"scope": "csharp",
+		"prefix": "OverlapCircle",
+		"body": [
+			"Physics2D.OverlapCircle(posicao, raio);"
+		],
+		"description": "OverlapCircle"
+	},
+	"├>UnityNØØB®:rb2d.velocity": {
+		"scope": "csharp",
+		"prefix": "velocity",
+		"body": [
+			"rb.velocity"
+		],
+		"description": "Rigidbody2D.velocity"
+	},
+	"├>UnityNØØB®:rb2d.setvelocity": {
+		"scope": "csharp",
+		"prefix": "velocity",
+		"body": [
+			"rb.velocity = new Vector2(x, y);"
+		],
+		"description": "Seta Rigidbody2D.velocity"
+	},
+	"├>UnityNØØB®:rb2d.moveposition": {
+		"scope": "csharp",
+		"prefix": "MovePosition",
+		"body": [
+			"rb.MovePosition(novaPosicao);"
+		],
+		"description": "Rigidbody2D.MovePosition"
+	},
+	"├>UnityNØØB®:rb2d.movepositiondt": {
+		"scope": "csharp",
+		"prefix": "MovePosition",
+		"body": [
+			"rb.MovePosition(transform.position + direcao * velocidade * Time.deltaTime);"
+		],
+		"description": "MovePosition com deltaTime"
+	},
 }
