@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class targetScript : MonoBehaviour
 {
-  private bool jaMorreu = false;
+  public bool jaMorreu = false;
   [Header("Configurações de Vida")]
   public float Vida;
   public int Pontos;

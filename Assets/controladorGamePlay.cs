@@ -8,8 +8,12 @@ using TMPro;
 public class controladorGamePlay : MonoBehaviour
 {
     public Camera mainCamera;
-    public TMP_Text Timer,scoreHUD;
+    public TMP_Text Timer,scoreHUD,LifeHUD;
     public int pontosAtuais;
+    public GameObject[] inimigo;
+    private float nextFire = 0;
+    public float fire_rate,playerLife;
+    
             
     [Header("Configurações de Arma")]
     public GameObject hitEffectPrefab; // Prefab do efeito visual (ex: um círculo de sangue, um flash)
@@ -24,6 +28,7 @@ public class controladorGamePlay : MonoBehaviour
         if (mainCamera == null)
         {
             mainCamera = Camera.main;
+            playerLife = 100f;
         }
 
         StageStarter(1,"normal");
@@ -38,19 +43,29 @@ public class controladorGamePlay : MonoBehaviour
 
 
     }
-
-    void Update()
+    
+       void Update()
     {
-        scoreHUD.text = $"Score:{pontosAtuais}"; 
+         if (Time.time > nextFire && stageTempo > 0f) {
+         nextFire = Time.time + fire_rate;
+            
+
+         Instantiate(inimigo[0],new Vector3(Random.Range(-6.5f,9.5f),-5.4f),Quaternion.identity);
+        }
+
+        scoreHUD.text = $"Score:{pontosAtuais}";
+        LifeHUD.text = $"LIFE:{playerLife}";
+
         if (stageTempo > 0f)
         {
             stageTempo -= Time.deltaTime;
             Timer.text = stageTempo.ToString("F0"); ;
-
         }
+        
+
 
         // --- LÓGICA DE CLIQUE (Simples Shot) ---
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0))
         {
             // Captura a posição do clique/toque inicial
             Vector3 currentScreenPos = Input.mousePosition;
@@ -58,7 +73,7 @@ public class controladorGamePlay : MonoBehaviour
             Vector3 objetoPos = mainCamera.ScreenToWorldPoint(currentScreenPos); //Covertendo para uma posição da camera
 
             Instantiate(hitEffectPrefab, objetoPos, Quaternion.identity);
-           
+
             // Chama a função de acerto (para o tiro instantâneo)
             //PerformHitCheck(currentScreenPos);
         }

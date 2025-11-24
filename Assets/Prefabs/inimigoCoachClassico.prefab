@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3667939818767876771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.35, y: 2.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4952603573157340576}
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdbabc64d5d41a24795dcbdae1a1716c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jaMorreu: 0
   Vida: 1
   Pontos: 100
   Anima: {fileID: 4952603573157340590}
@@ -317,4 +318,8 @@ MonoBehaviour:
   mira1: {fileID: 3667939818767876771}
   falaPersonagem: {fileID: 2539432115200720164, guid: e61e5bccdcd8d424b9ebfcb9c664c8ef,
     type: 3}
+  damageHUD: {fileID: 2082883637074568048, guid: 46d14090dee0848448de7c8c8a673866,
+    type: 3}
+  playerLifeGameObj: {fileID: 0}
   speed: 3
+  damageOutput: 10
