@@ -9,16 +9,16 @@ public class coachClassicoScript : MonoBehaviour
     public float speed, damageOutput; // velociade que ele sobe
     private bool jaAtacou; //ele só pode atirar uma vez
     private GameObject falaEstanciada; //Salva o GameObject que Criei
-    
+
     // Start is called before the first frame update
     void Start()
     {
         this.transform.position = new Vector3(this.transform.position.x, -4.95f, 0f); //manda ele pra baixo da tela
         jaAtacou = false;
         playerLifeGameObj = GameObject.Find("MAIN_STAGE_CONTROLER");
+        
     }
-
-
+       
     // Update is called once per frame
     void Update()
     {
